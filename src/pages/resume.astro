@@ -1,0 +1,21 @@
+---
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Resume</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <h1>My Resume</h1>
+      <p>Click below to download my resume:</p>
+      <a href="/assets/resume.pdf" download class="button">Download Resume</a>
+    </main>
+  </body>
+</html>

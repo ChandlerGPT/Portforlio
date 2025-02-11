@@ -1,0 +1,63 @@
+---
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+
+const projects = [
+  {
+    title: "Genki Knights",
+    image: "/images/dungeon.jpg",
+    description: "An exciting 2D dungeon-crawling adventure game built with Unity!",
+    link: "https://simmer.io/@MENG/team-04-dungeon-mission"
+  },
+  {
+    title: "Open Season",
+    image: "/images/hidenseek.jpg",
+    description: "A Multiplayer Hide N Seek game. #The room host will be the hunter.",
+    link: "https://simmer.io/@ChandlerHuang/hide-and-seek"
+  },
+  {
+    title: "Flappy Bird Clone",
+    image: "/images/Screenshot1.jpg",
+    description: "A fun Flappy Bird clone made using Unity and C#.",
+    link: "https://simmer.io/@ChandlerHuang/flappy-bird"
+  },
+  
+  {
+    title: "Flappy Bird Clon2e",
+    image: "/images/Screenshot1.jpg",
+    description: "A fun Flappy Bird clone made using Unity and C#.",
+    link: "https://simmer.io/@ChandlerHuang/flappy-bird"
+  }
+];
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects</title>
+    <link rel="stylesheet" href="../styles/global.css" />
+  </head>
+  <body>
+    <NavBar />
+    <main>
+      <h1>My Projects</h1>
+      <div class="projects-grid">
+        {projects.map((project) => (
+          <div class="project-card">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="project-thumbnail"
+              loading="lazy"
+            />
+            <div class="project-popup">
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.link} target="_blank">Visit on Simmer.io</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+  </body>
+</html>
