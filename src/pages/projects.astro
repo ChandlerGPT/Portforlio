@@ -4,10 +4,22 @@ import NavBar from "../components/NavBar.astro";
 
 const projects = [
   {
-    title: "Genki Knights",
-    image: "/images/dungeon.jpg",
-    description: "An exciting 2D dungeon-crawling adventure game built with Unity!",
-    link: "https://simmer.io/@MENG/team-04-dungeon-mission"
+    title: "Ninjia & Dragon",
+    image: "/images/ninjia.jpg",
+    description: "Simlpy press space to kill the dragon.",
+    link: "https://simmer.io/@ChanH/golf-ninjia"
+  },
+  {
+    title: "Flappy Mario",
+    image: "/images/FlappyMario.jpg",
+    description: "A fun Flappy Bird clone made using Unity and C#.",
+    link: "https://simmer.io/@ChanH/flappy-mario"
+  },
+  {
+    title: "Jump Queen",
+    image: "/images/jumpqueen.jpg",
+    description: "It's a New York game!",
+    link: "https://simmer.io/@ChanH/jump-queen"
   },
   {
     title: "Open Season",
@@ -15,18 +27,22 @@ const projects = [
     description: "A Multiplayer Hide N Seek game. #The room host will be the hunter.",
     link: "https://simmer.io/@ChandlerHuang/hide-and-seek"
   },
+
+
+  
+
   {
-    title: "Flappy Bird Clone",
-    image: "/images/Screenshot1.jpg",
-    description: "A fun Flappy Bird clone made using Unity and C#.",
-    link: "https://simmer.io/@ChandlerHuang/flappy-bird"
+    title: "Genki Knights",
+    image: "/images/dungeon.jpg",
+    description: "An exciting 2D dungeon-crawling rougelike game built with Unity!",
+    link: "https://simmer.io/@MENG/team-04-dungeon-mission"
   },
   
   {
-    title: "Flappy Bird Clon2e",
-    image: "/images/Screenshot1.jpg",
-    description: "A fun Flappy Bird clone made using Unity and C#.",
-    link: "https://simmer.io/@ChandlerHuang/flappy-bird"
+    title: "Dream Factory",
+    image: "/images/Dreamfactory.jpg",
+    description: "Design your factory by drag and drop.",
+    link: "https://simmer.io/@ChanH/dream-factory"
   }
 ];
 ---
@@ -40,7 +56,43 @@ const projects = [
   <body>
     <NavBar />
     <main>
-      <h1>My Projects</h1>
+      
+
+      <!-- Highlighted Project 1 -->
+      <section class="highlighted-project">
+        <h2>Dream Factory</h2>
+        <section class="video-container">
+          <video autoplay loop muted playsinline class="project-video">
+              <source src="/videos/DreamFactory.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </section>
+      
+      
+        <p>A fun way to learn programming! Use the components to design your own factory!</p>
+        <a href="https://simmer.io/@ChanH/dream-factory" target="_blank" class="button">
+          Play on Simmer.io
+        </a>
+      </section>
+
+      <!-- Highlighted Project 2 -->
+      <section class="highlighted-project">
+        <h2>Genki Knights:Dungeon Mission</h2>
+        <section class="video-container">
+          <video autoplay loop muted playsinline class="project-video">
+              <source src="/videos/genki-knights.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </section>
+      
+      
+        <p>Enjoy this wonderful rougelike dungeon game. Choose your powerful hero,defeat the enemy </p>
+        <a href="https://simmer.io/@MENG/team-04-dungeon-mission" target="_blank" class="button">
+          Play on Simmer.io
+        </a>
+      </section>
+
+
       <div class="projects-grid">
         {projects.map((project) => (
           <div class="project-card">
@@ -58,6 +110,8 @@ const projects = [
           </div>
         ))}
       </div>
+
+
     </main>
   </body>
 </html>
