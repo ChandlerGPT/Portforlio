@@ -3,115 +3,131 @@ import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
 
 const projects = [
-  {
-    title: "Ninjia & Dragon",
-    image: "/images/ninjia.jpg",
-    description: "Simlpy press space to kill the dragon.",
-    link: "https://simmer.io/@ChanH/golf-ninjia"
-  },
-  {
-    title: "Flappy Mario",
-    image: "/images/FlappyMario.jpg",
-    description: "A fun Flappy Bird clone made using Unity and C#.",
-    link: "https://simmer.io/@ChanH/flappy-mario"
-  },
-  {
-    title: "Jump Queen",
-    image: "/images/jumpqueen.jpg",
-    description: "It's a New York game!",
-    link: "https://simmer.io/@ChanH/jump-queen"
-  },
-  {
-    title: "Open Season",
-    image: "/images/hidenseek.jpg",
-    description: "A Multiplayer Hide N Seek game. #The room host will be the hunter.",
-    link: "https://simmer.io/@ChandlerHuang/hide-and-seek"
-  },
+  { title: "Ninjia & Dragon", image: "/images/ninjia.jpg", description: "Simply press space to kill the dragon.", link: "https://simmer.io/@ChanH/golf-ninjia" },
+  { title: "Flappy Mario", image: "/images/FlappyMario.jpg", description: "A fun Flappy Bird clone made using Unity and C#.", link: "https://simmer.io/@ChanH/flappy-mario" },
+  { title: "Jump Queen", image: "/images/jumpqueen.jpg", description: "It's a New York game! Use [space] and [Q][E] to play", link: "https://simmer.io/@ChanH/jump-queen" },
+  { title: "Open Season", image: "/images/hidenseek.jpg", description: "A Multiplayer Hide N Seek game. #The room host will be the hunter.", link: "https://simmer.io/@ChandlerHuang/hide-and-seek" },
+  { title: "Genki Knights", image: "/images/dungeon.jpg", description: "An exciting 2D dungeon-crawling roguelike game built with Unity!", link: "https://simmer.io/@MENG/team-04-dungeon-mission" },
+  { title: "Dream Factory", image: "/images/Dreamfactory.jpg", description: "Design your factory by drag and drop.", link: "https://simmer.io/@ChanH/dream-factory" }
+];
 
-
-  
-
-  {
-    title: "Genki Knights",
-    image: "/images/dungeon.jpg",
-    description: "An exciting 2D dungeon-crawling rougelike game built with Unity!",
-    link: "https://simmer.io/@MENG/team-04-dungeon-mission"
-  },
-  
-  {
-    title: "Dream Factory",
-    image: "/images/Dreamfactory.jpg",
-    description: "Design your factory by drag and drop.",
-    link: "https://simmer.io/@ChanH/dream-factory"
-  }
+const upcomingGames = [
+  { title: "Kung Fu", video: "/videos/Kungfu.mp4", description: "An innovative rhythm game" },
+  { title: "illusion trap", video: "/videos/3Dgame.mp4", description: "A 3D mobile adventure game, the main idea is to call for peace & love" },
+  { title: "UE Creator", video: "/videos/Creator.mp4", description: "A fundamental 3D world creating system for games in Unreal Engine 5" }
 ];
 ---
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Projects</title>
-    <link rel="stylesheet" href="../styles/global.css" />
-  </head>
-  <body>
-    <NavBar />
-    <main>
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <link rel="stylesheet" href="../styles/global.css" />
+</head>
+<body>
+  <NavBar />
+  <main>
+    <h1>My Projects</h1>
 
-      <!-- Highlighted Project 1 -->
-      <section class="highlighted-project">
-        <h2>Dream Factory</h2>
-        <section class="video-container">
-          <video autoplay loop muted playsinline class="project-video">
-              <source src="/videos/DreamFactory.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-          </video>
-        </section>
-      
-      
-        <p>A fun way to learn programming! Use the components to design your own factory!</p>
-        <a href="https://simmer.io/@ChanH/dream-factory" target="_blank" class="button">
-          Play on Simmer.io
-        </a>
-      </section>
+    <!-- 🔥 Highlighted Project 1 -->
+    <section class="highlighted-project">
+      <h2>Dream Factory</h2>
+      <div class="video-container">
+        <video id="video-0" class="project-video">
+          <source src="/videos/DreamFactory.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="play-button" onclick="togglePlayPause(0)">▶ Play</button>
+      </div>
+      <p>A fun way to learn programming! Use the components to design your own factory!</p>
+      <a href="https://simmer.io/@ChanH/dream-factory" target="_blank" class="button">
+        Play on Simmer.io
+      </a>
+    </section>
 
-      <!-- Highlighted Project 2 -->
-      <section class="highlighted-project">
-        <h2>Genki Knights:Dungeon Mission</h2>
-        <section class="video-container">
-          <video autoplay loop muted playsinline class="project-video">
-              <source src="/videos/genki-knights.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-          </video>
-        </section>
-      
-      
-        <p>Enjoy this wonderful rougelike dungeon game. Choose your powerful hero,defeat the enemy </p>
-        <a href="https://simmer.io/@MENG/team-04-dungeon-mission" target="_blank" class="button">
-          Play on Simmer.io
-        </a>
-      </section>
+    <!-- 🏆 Highlighted Project 2 -->
+    <section class="highlighted-project">
+      <h2>Genki Knights: Dungeon Mission</h2>
+      <div class="video-container">
+        <video id="video-1" class="project-video">
+          <source src="/videos/genki-knights.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <button class="play-button" onclick="togglePlayPause(1)">▶ Play</button>
+      </div>
+      <p>Enjoy this wonderful roguelike dungeon game. Choose your powerful hero, defeat the enemies!</p>
+      <a href="https://simmer.io/@MENG/team-04-dungeon-mission" target="_blank" class="button">
+        Play on Simmer.io
+      </a>
+    </section>
 
+    <!-- 🕹 Regular Projects Grid -->
+    <div class="projects-grid">
+      {projects.map((project) => (
+        <div class="project-card">
+          <img src={project.image} alt={project.title} class="project-thumbnail" loading="lazy" />
+          <div class="project-popup">
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+            <a href={project.link} target="_blank">Visit on Simmer.io</a>
+          </div>
+        </div>
+      ))}
+    </div>
 
-      <div class="projects-grid">
-        {projects.map((project) => (
-          <div class="project-card">
-            <img
-              src={project.image}
-              alt={project.title}
-              class="project-thumbnail"
-              loading="lazy"
-            />
-            <div class="project-popup">
-              <h3>{project.title}</h3>
-              <p>{project.description}</p>
-              <a href={project.link} target="_blank">Visit on Simmer.io</a>
+    <!-- 🚀 Upcoming Games Section -->
+    <section class="upcoming-games">
+      <h2>Upcoming Game Demos</h2>
+      <div class="upcoming-grid">
+        {upcomingGames.map((game, index) => (
+          <div class="game-demo">
+            <h3>{game.title}</h3>
+            <div class="video-wrapper">
+              <video class="demo-video" id={"video-" + (index + 2)}>
+                <source src={game.video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <button class="play-button" onclick={`togglePlayPause(${index + 2})`}>
+                ▶ Play
+              </button>
             </div>
+            <p>{game.description}</p>
           </div>
         ))}
       </div>
+    </section>
 
+  </main>
 
-    </main>
-  </body>
+  <script>
+    function togglePlayPause(index:number) {
+      console.log(`togglePlayPause called with index: ${index}`);
+  
+      const video = document.getElementById(`video-${index}`) as HTMLVideoElement;
+      console.log("Video element:", video);
+  
+      const button = document.querySelectorAll(".play-button")[index];
+      console.log("Button element:", button);
+  
+      if (!video || !button) {
+        console.error(`Element not found: video-${index} or button`);
+        return;
+      }
+  
+      if (video.paused) {
+        video.play();
+        button.textContent = "❚❚ Pause";
+      } else {
+        video.pause();
+        button.textContent = "▶ Play";
+      }
+    }
+  
+    // ✅ Make function globally available
+    window.togglePlayPause = togglePlayPause;
+  </script>
+  
+  
+</body>
 </html>

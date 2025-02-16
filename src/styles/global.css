@@ -13,6 +13,7 @@ h1, h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 p {
@@ -28,9 +29,11 @@ p {
   padding: 1rem 2rem;
   border-radius: 5px;
   text-decoration: none;
-  margin: 0 1rem;
+  margin: 1rem;
   font-size: 1rem;
   transition: background 0.3s, color 0.3s;
+  border: none;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -42,12 +45,11 @@ p {
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   text-align: center;
   min-height: 100vh; /* Change from height to min-height */
   margin: 0;
-  overflow-y: auto; /* Enable scrolling for full-page sections */
+  overflow-y: auto;
 }
 
 /* Full-Page Sections */
@@ -58,19 +60,19 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 1rem; /* Reduce padding */
+  padding: 2rem 0; /* Adjusted padding */
 }
 
 .about {
-  background: linear-gradient(to right, #e66465, #9198e5); /* Background for About Me */
+  background: linear-gradient(to right, #e66465, #9198e5);
 }
 
 .skills {
-  background: linear-gradient(to right, #6a11cb, #2575fc); /* Background for Skills */
+  background: linear-gradient(to right, #6a11cb, #2575fc);
 }
 
 .why-me {
-  background: linear-gradient(to right, #43cea2, #185a9d); /* Background for Why Me */
+  background: linear-gradient(to right, #43cea2, #185a9d);
 }
 
 /* Skills Section */
@@ -108,12 +110,12 @@ ul li {
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Sets max 3 per row */
-  gap: 1.5rem; 
-  justify-content: center; 
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3 per row */
+  gap: 1.5rem;
+  justify-content: center;
   padding: 2rem;
-  max-width: 1200px; 
-  margin: auto; 
+  max-width: 1200px;
+  margin: auto;
 }
 
 .project-card {
@@ -126,18 +128,14 @@ ul li {
 
 .project-thumbnail {
   width: 100%;
-  height: 200px; 
-  object-fit: cover; 
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
-}
-
-.project-card:hover .project-thumbnail {
-  transform: scale(1.05); /* Zoom effect on image */
+  transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .project-popup {
@@ -147,7 +145,7 @@ ul li {
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.9);
   color: white;
-  padding: 2rem;
+  padding: 1.5rem;
   width: 90%;
   max-width: 400px;
   border-radius: 10px;
@@ -161,17 +159,6 @@ ul li {
 .project-card:hover .project-popup {
   opacity: 1;
   visibility: visible;
-}
-
-.project-popup h3 {
-  margin: 0 0 1rem;
-  font-size: 1.8rem;
-}
-
-.project-popup p {
-  margin: 0 0 1.2rem;
-  font-size: 1.2rem;
-  line-height: 1.5;
 }
 
 .project-popup a {
@@ -192,23 +179,137 @@ ul li {
 
 /* Highlighted Projects */
 .highlighted-project {
-  min-height: 100vh; /* Change from height to min-height */
+  min-height: 90vh; /* Adjusted height */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: linear-gradient(to right, #e66465, #9198e5);
-  padding: 1rem; /* Reduce padding */
+  padding: 2rem 0;
 }
 
 /* Video Styling */
 .project-video {
-  width: 80vw; /* Make it responsive */
-  height: 45vw; /* Maintain aspect ratio */
-  max-width: 900px; /* Limit max size */
-  max-height: 500px; /* Keep it centered */
+  width: 80%;
+  max-width: 900px;
+  max-height: 500px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  margin: 1rem 0;
+}
+
+/* Upcoming Games Section */
+.upcoming-games {
+  text-align: center;
+  padding: 4rem 0;
+  background: linear-gradient(to right, #232526, #414345);
+}
+
+.upcoming-games h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+/* Upcoming Games Grid */
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Individual Game Demo */
+.game-demo {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Wrapper */
+.video-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.demo-video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.play-button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-button:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+
+/* Video Styling */
+.demo-video {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.demo-video:hover {
+  transform: scale(1.05);
+}
+
+/* Play Button */
+
+.video-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-video {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  position: absolute;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
 }
