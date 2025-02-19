@@ -1,29 +1,67 @@
 <nav class="navbar">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/projects">Projects</a>
-    <a href="/resume">Resume</a>
-    <a href="/contact">Contact</a>
-  </nav>
-  
-  <style>
-  /* Navbar Styles */
-  .navbar {
-    background: rgba(0, 0, 0, 0.8); /* Dark transparent background */
-    position: fixed;
-    top: -50px; /* Hidden initially */
-    left: 0;
-    width: 100%;
-    height: 30px; /* Set a fixed height */
-    padding: 1rem 0;
-    text-align: center;
-    transition: top 0.3s ease; /* Smooth slide-in animation */
-    z-index: 1000; /* Ensure it's on top of all other elements */
+  <a href="/">Home</a>
+  <a href="/about">About</a>
+  <a href="/projects">Projects</a>
+  <a href="/resume">Resume</a>
+</nav>
+
+<style>
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: -60px; /* Initially hidden */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%; /* Make it slightly smaller than full width */
+  height: 50px;
+  background: rgba(0, 0, 0, 0.85); /* Darker background */
+  border-radius: 25px; /* Rounded edges */
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: top 0.4s ease-in-out;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3); /* Soft glow effect */
+  z-index: 1000;
+}
+
+/* Slide down when hovering near the top */
+.navbar:hover {
+  top: 10px;
+}
+
+/* Navbar Links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+
+/* Navbar Animation on Scroll */
+@keyframes navbar-glow {
+  0% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
   }
-  
-  /* Trigger the navbar only when hovering near the top */
-  .navbar:hover {
-    top: 0; /* Slide into view */
+  50% {
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
   }
-  </style>
-  
+  100% {
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+  }
+}
+
+.navbar {
+  animation: navbar-glow 3s infinite alternate;
+}
+</style>
