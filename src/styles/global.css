@@ -9,7 +9,14 @@ body {
   min-height: 100vh;
 }
 
-h1, h2 {
+h1 {
+  font-size: 3.6rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -53,6 +60,14 @@ main {
 }
 
 /* Full-Page Sections */
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
 .full-page {
   min-height: 100vh; /* Change from height to min-height */
   display: flex;
